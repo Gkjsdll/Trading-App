@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  form.col-xs-8.col-xs-offset-2#formAddVinyl
+  h3.col-xs-10.col-xs-offset-1 Add Vinyl to Your Collection
+  form.col-xs-10.col-xs-offset-1#formAddVinyl
     .form-group
       span.requiredField * 
       label Artist
@@ -10,24 +11,26 @@ block content
       span.requiredField * 
       label Album
       input#album.form-control(type='text', placeholder='Album Name', required)
-    .form-group
-      span.requiredField * 
-      label Condition
-      input#condition.form-control(type='Number', min='1', max='5', placeholder='Condition 1-5')
-    .form-group
-      label Year
-      input#year.form-control(type='Number', placeholder='Year', min='1857')
-    
-    .form-group
-      label Genre
-      select#genre.form-control
-        option Classical
-        option Folk
-        option Jazz
-        option Opera
-        option Rock
-        option Other
-        option Country
+      
+    .row
+      .form-group.col-xs-4
+        span.requiredField * 
+        label Condition
+        input#condition.form-control(type='Number', min='1', max='5', placeholder='Condition 1-5')
+      .form-group.col-xs-4
+        label Year
+        input#year.form-control(type='Number', placeholder='Year', min='1857')
+      
+      .form-group.col-xs-4
+        label Genre
+        select#genre.form-control
+          option Classical
+          option Folk
+          option Jazz
+          option Opera
+          option Rock
+          option Other
+          option Country
     
     button.btn.btn-default(type='submit') Submit
     

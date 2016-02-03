@@ -12,5 +12,16 @@ block content
   ul
     li 
   h3 Your Collection
-  ul
-    li 
+  ul#ownedVinyls
+    each vinyl in owned
+      li
+        p
+          = "Artist: " + vinyl.artist
+        p
+          = "Album: " + vinyl.album 
+        p
+          = "Condition: " + vinyl.condition 
+        p
+          = "Year: " + vinyl.year 
+        p
+          = "Genre: " + vinyl.genre 

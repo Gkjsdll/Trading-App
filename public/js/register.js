@@ -21,7 +21,6 @@ function clearFields() {
   fields.forEach(function(field){
     field.val("");
   });
-  console.log("Fields cleared.");
 }
 
 function doRegister(e){
@@ -40,8 +39,13 @@ function doRegister(e){
       phone: $phone.val()
     })
     .success(function(data) {
-      swal("New User Created")
-      location.href = "/users/login";
+      swal({
+        title:"New User Created",
+        closeOnConfirm: false,
+      },
+      function(){
+        location.href = "/users/login";
+      })
     })
     .fail(function(err) {
       console.error(err);
