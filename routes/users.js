@@ -29,7 +29,7 @@ router.post('/login', function(req, res, next) {
       res.status(400).send(err);
     } else {
       console.log('token:', token);
-      res.cookie('userjwt', token).send();
+      res.cookie('userjwt', token).send("User Logged In");
     }
   });
 });

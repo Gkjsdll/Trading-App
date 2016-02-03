@@ -11,7 +11,7 @@ var vinylSchema = mongoose.Schema({
   },
   artist: { type: String, required: true},
   album: { type: String, required: true},
-  condition: { type: Number, min:1, max:5, required: true},
+  condition: { type: Number, min: 1, max: 5, required: true},
   year: { type: Number, min: 1857},
   genre: { type: String }
   // automatically gets _id, which is a unique mongo id
