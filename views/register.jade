@@ -1,0 +1,20 @@
+extends layout
+  
+block content  
+  form.col-xs-8.col-xs-offset-2
+    .form-group
+      label First Name
+      input#firstName.form-control(type='text', placeholder='First Name')
+    .form-group
+      label Last Name
+      input#lastName.form-control(type='text', placeholder='Last Name')
+    .form-group
+      label Phone #
+      input#phone.form-control(type='text', placeholder='Phone #')
+    .form-group
+      label Email address
+      input#email.form-control(type='email', placeholder='E-Mail')
+    .form-group
+      label Password
+      input#password.form-control(type='password', placeholder='Password')
+    button.btn.btn-default(type='submit') Submit

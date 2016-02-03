@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css")
+    link(rel='stylesheet', href='/css/style.css')
+  body
+  html
+  body
+    nav
+      .container-fluid
+        // Collect the nav links, forms, and other content for toggling
+        ul.nav.navbar-nav
+          li
+            a(href="/dashboard")#navDashboard Dashboard
+          li
+            a(href='/users')#navUsers Users
+          li
+            a(href='/catalog')#navCatalog Catalog
+             
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='/users/logout')#navLogout Logout
+          li
+            a(href='/users/login')#navLogin Login
+          li
+            a(href='/users/register')#navRegister Register
+             
+  .container-fluid
+    block content
+  
+  script(src="/lib/jquery/dist/jquery.min.js")
+  script(src="/lib/bootstrap/dist/js/bootstrap.min.js")
+  block scripts
