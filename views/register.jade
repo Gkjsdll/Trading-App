@@ -1,28 +1,34 @@
 extends layout
+
+block links
+  link(rel="stylesheet", href="/css/register.css")
   
 block content  
-  form.col-xs-8.col-xs-offset-2
+  form.col-xs-8.col-xs-offset-2#formRegister
     .form-group
       span.requiredField * 
       label First Name
-      input#firstName.form-control(type='text', placeholder='First Name', required)
+      input#firstName.form-control(type='text', placeholder='First Name', value="John", required)
     .form-group
       span.requiredField * 
       label Last Name
-      input#lastName.form-control(type='text', placeholder='Last Name', required)
+      input#lastName.form-control(type='text', placeholder='Last Name', value="Doe", required)
     .form-group
       label Phone #
       input#phone.form-control(type='text', placeholder='Phone #')
     .form-group
       span.requiredField * 
       label Email address
-      input#email.form-control(type='email', placeholder='E-Mail', required)
+      input#email.form-control(type='email', placeholder='E-Mail', value="example@website.co", required)
     .form-group
       span.requiredField * 
       label Password
-      input#password.form-control(type='password', placeholder='Password', required)
+      input#password.form-control(type='password', placeholder='Password', value="***", required)
     .form-group
       span.requiredField * 
       label Verify Password
-      input#verifyPassword.form-control(type='password', placeholder='Verify Password', required)
+      input#verifyPassword.form-control(type='password', placeholder='Verify Password', value="***" required)
     button.btn.btn-default(type='submit') Submit
+
+block scripts
+  script(src="/js/register.js")

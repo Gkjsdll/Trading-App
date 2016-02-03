@@ -2,3 +2,7 @@
   color: red;
   font-weight: bold;
 }
+
+input:hover {
+  border: 1px solid blue;
+}
