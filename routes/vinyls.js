@@ -15,6 +15,10 @@ router.get("/", User.isLoggedIn, function(req, res, next) {
   });
 });
 
+router.get("/add", User.isLoggedIn, function(req, res, next) {
+  res.render("addVinyl");
+});
+
 router.get('/:id', User.isLoggedIn, function(req, res, next) {
   Vinyl.findById(req.params.id, function(err, vinyl) {
     if(err){
@@ -36,7 +40,6 @@ router.post("/", User.isLoggedIn, function(req, res, next) {
 
   vinyl.save(function(err, savedVinyl) {
     if(err) return res.send(err);
-    console.log("We got here");
     res.send(savedVinyl);
   });
 });

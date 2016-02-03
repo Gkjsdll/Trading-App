@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  form.col-xs-8.col-xs-offset-2#formRegister
+    .form-group
+      span.requiredField * 
+      label Artist
+      input#artist.form-control(type='text', placeholder='Artist', required)
+    .form-group
+      span.requiredField * 
+      label Album
+      input#album.form-control(type='text', placeholder='Album Name', required)
+    .form-group
+      span.requiredField * 
+      label Condition
+      input#condition.form-control(type='text', placeholder='Condition')
+    .form-group
+      label Year
+      input#year.form-control(type='Number', placeholder='Year', min='1857')
+    
+    .form-group
+      label Genre
+      select#genre.form-control
+        option Classical
+        option Folk
+        option Jazz
+        option Opera
+        option Rock
+        option Other
+        option Country
+    
+    button.btn.btn-default(type='submit') Submit
