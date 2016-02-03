@@ -3,18 +3,26 @@ extends layout
 block content  
   form.col-xs-8.col-xs-offset-2
     .form-group
+      span.requiredField * 
       label First Name
-      input#firstName.form-control(type='text', placeholder='First Name')
+      input#firstName.form-control(type='text', placeholder='First Name', required)
     .form-group
+      span.requiredField * 
       label Last Name
-      input#lastName.form-control(type='text', placeholder='Last Name')
+      input#lastName.form-control(type='text', placeholder='Last Name', required)
     .form-group
       label Phone #
       input#phone.form-control(type='text', placeholder='Phone #')
     .form-group
+      span.requiredField * 
       label Email address
-      input#email.form-control(type='email', placeholder='E-Mail')
+      input#email.form-control(type='email', placeholder='E-Mail', required)
     .form-group
+      span.requiredField * 
       label Password
-      input#password.form-control(type='password', placeholder='Password')
+      input#password.form-control(type='password', placeholder='Password', required)
+    .form-group
+      span.requiredField * 
+      label Verify Password
+      input#verifyPassword.form-control(type='password', placeholder='Verify Password', required)
     button.btn.btn-default(type='submit') Submit

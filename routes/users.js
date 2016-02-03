@@ -10,6 +10,10 @@ router.get('/register', function(req, res, next) {
   res.render('register');
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+
 router.post('/register', function(req, res, next) {
   User.register(req.body, function(err, savedUser) {
     res.status(err ? 400 : 200).send(err || savedUser);
