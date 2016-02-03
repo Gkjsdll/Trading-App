@@ -1,0 +1,19 @@
+extends layout
+
+block links
+  //- link(rel="stylesheet", href="/css/login.css")
+  
+block content  
+  form.col-xs-8.col-xs-offset-2#formLogin
+    .form-group
+      span.requiredField * 
+      label Email address
+      input#email.form-control(type='email', placeholder='E-Mail', value="example@website.co", required)
+    .form-group
+      span.requiredField * 
+      label Password
+      input#password.form-control(type='password', placeholder='Password', value="***", required)
+    button.btn.btn-default(type='submit') Submit
+
+block scripts
+  script(src="/js/login.js")

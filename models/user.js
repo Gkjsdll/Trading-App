@@ -7,7 +7,7 @@ var moment = require('moment');
 
 var JWT_SECRET = process.env.JWT_SECRET;
 
-var ref = new Firebase('https://sillylogintest.firebaseio.com/')
+var ref = new Firebase('https://this-is-vinyl-tap.firebaseio.com/')
 
 var User;
 
@@ -24,16 +24,23 @@ var userSchema = mongoose.Schema({
 
 // statics = model method   User.register()
 userSchema.statics.register = function (userObj, cb) {
-  if(!userObj.email || !userObj.password) {
-    return cb('Missing required field (email, password)');
+  console.log(userObj);
+  if(!userObj.email || !userObj.password || !userObj['name[first]'] || !userObj['name[last]'] ) {
+    return cb('Missing required field (email, password, name)');
   }
+  console.log("All required fields present");
   // userObj === {email: 'something', password: 'something else'}
-  ref.createUser(userObj, function(err, userData) {  // create user on firebase
+  ref.createUser({email: userObj.email, password: userObj.password}, function(err, userData) {  // create user on firebase, we're giving htem too many keys
     if(err) return cb(err);  // error could be that email was in use.
                              // invoke callback with error and stop
     var user = new User();
+
     user.firebaseId = userData.uid;
     user.email = userObj.email;
+    console.log("Error didn't happen before name");
+    user.name.first = userObj['name[first]'];
+    user.name.last = userObj['name[last]'];
+    user.phone = userObj.phone;
     user.save(cb);
   });
 };
