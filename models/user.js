@@ -84,7 +84,7 @@ userSchema.statics.isLoggedIn = function(req, res, next) {
     return authFail('expiration fail');
   };
 
-  req.token = payload;
+  req.user = payload;
 
   next();
 

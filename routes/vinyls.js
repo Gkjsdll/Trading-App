@@ -30,8 +30,8 @@ router.get('/:id', User.isLoggedIn, function(req, res, next) {
 
 router.post("/", User.isLoggedIn, function(req, res, next) {
   var vinyl = new Vinyl();
-
-  vinyl.owner = req.body.owner;
+  
+  vinyl.owner = req.user._id;
   vinyl.artist = req.body.artist;
   vinyl.album = req.body.album;
   vinyl.condition = req.body.condition;
