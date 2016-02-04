@@ -1,0 +1,25 @@
+#IdCatalog {
+  text-align: center;
+}
+
+#IdCatalog li {
+  border: 1px solid lightgrey;
+  margin-bottom: 12px;
+}
+
+#IdCatalog .row div {
+  font-size: 1.4em;
+  text-shadow: 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white;
+}
+
+.align-left {
+  text-align: left
+}
+
+ul {
+  list-style: none;
+}
+
+li .row{
+  margin: 8px 0px 8px 0px;
+}

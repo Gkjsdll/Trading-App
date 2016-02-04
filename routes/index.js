@@ -12,12 +12,20 @@ router.get("/dashboard", User.isLoggedIn, function(req, res, next) {
   User.findById(userToken._id , function(err, foundUser){
     if(err) return res.status(400).send(err);
     console.log(foundUser);
-
     Vinyl.find({owner: userId}, function(err, vinyls) {
       if(err) return res.status(400).send(err);
       res.render("dashboard", {user: foundUser.name, owned: vinyls});
     })
   })
+})
+
+router.get('/catalog', User.isLoggedIn, function(req, res, next) {
+  console.log(req.user._id);
+  Vinyl.find({owner: {$ne: req.user_id} }, function(err, vinyls) {
+    console.log(vinyls);
+    if(err) return res.status(400).send(err);
+    res.render('catalog', {catalog: vinyls});
+  });
 })
 
 router.get('/', function(req, res, next) {

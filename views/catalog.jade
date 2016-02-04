@@ -1,0 +1,21 @@
+extends layout
+
+block links
+  link(rel="stylesheet", href="/css/catalog.css")
+
+block content
+  ul#IdCatalog
+    each vinyl in catalog
+      li
+        .row
+          .col-xs-6.align-left
+            = "Artist: " + vinyl.artist
+          .col-xs-6.align-left
+            = "Album: " + vinyl.album 
+        .row
+          .col-xs-4.align-left
+            = "Condition: " + vinyl.condition 
+          .col-xs-4.align-left
+            = "Year: " + vinyl.year 
+          .col-xs-4.align-left
+            = "Genre: " + vinyl.genre 

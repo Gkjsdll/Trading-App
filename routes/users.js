@@ -7,10 +7,14 @@ var User = require('../models/user');
 
 
 router.get('/register', function(req, res, next) {
+  var token = req.cookies.userjwt;
+  if(token) return res.redirect("/dashboard");
   res.render('register');
 });
 
 router.get('/login', function(req, res, next) {
+  var token = req.cookies.userjwt;
+  if(token) return res.redirect("/dashboard");
   res.render('login');
 });
 

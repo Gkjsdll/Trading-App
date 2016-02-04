@@ -3,8 +3,8 @@
 var express = require('express');
 var router = express.Router();
 
-var Vinyl = require('../models/vinyl');
 var User = require('../models/user');
+var Vinyl = require('../models/vinyl');
 
 router.get("/", User.isLoggedIn, function(req, res, next) {
   Vinyl.find({}, function(err, vinyls) {
@@ -30,7 +30,7 @@ router.get('/:id', User.isLoggedIn, function(req, res, next) {
 
 router.post("/", User.isLoggedIn, function(req, res, next) {
   var vinyl = new Vinyl();
-  
+
   vinyl.owner = req.user._id;
   vinyl.artist = req.body.artist;
   vinyl.album = req.body.album;
