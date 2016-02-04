@@ -44,4 +44,11 @@ router.post("/", User.isLoggedIn, function(req, res, next) {
   });
 });
 
+router.delete("/", User.isLoggedIn, function(req, res, next) {
+  Vinyl.findByIdAndRemove(req.body.vinyl_id, function(err, removedVinyl) { //if callback not specified, a query object is returned and the item is not deleted
+    if(err) return res.status(400).send();
+    res.send("Vinyl Removed");
+  });
+});
+
 module.exports = router;

@@ -17,8 +17,10 @@ block content
         .row
           .col-xs-6.align-left
             = "Artist: " + vinyl.artist
-          .col-xs-6.align-left
+          .col-xs-4.align-left.album
             = "Album: " + vinyl.album 
+          .col-xs-2
+            button.btn.btn-default.deleteVinyl(data-vinyl-id = vinyl.id) Remove Vinyl
         .row
           .col-xs-4.align-left
             = "Condition: " + vinyl.condition 
@@ -26,3 +28,5 @@ block content
             = "Year: " + vinyl.year 
           .col-xs-4.align-left
             = "Genre: " + vinyl.genre 
+block scripts
+  script(src="/js/dashboard.js")
