@@ -23,3 +23,7 @@ ul {
 li .row{
   margin: 8px 0px 8px 0px;
 }
+
+#navLogin, #navRegister {
+  display: none;
+}

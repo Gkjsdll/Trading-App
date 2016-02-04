@@ -7,3 +7,7 @@
   text-align: center;
   padding-top: 86px;
 }
+
+#navLogout, #navDashboard, #navCatalog {
+  display: none;
+}
