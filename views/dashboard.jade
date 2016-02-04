@@ -24,11 +24,17 @@ block content
           .col-xs-2
             button.btn.btn-default.deleteVinyl(data-vinyl-id = vinyl.id) Remove Vinyl
         .row
-          .col-xs-4.align-left
+          .col-xs-3.align-left
             = "Condition: " + vinyl.condition 
-          .col-xs-4.align-left
+          .col-xs-3.align-left
             = vinyl.year ? "Year: " + vinyl.year : "Year: Unknown"
-          .col-xs-4.align-left
+          .col-xs-3.align-left
             = "Genre: " + vinyl.genre 
+          table
+            tr.col-xs-3
+              td Available
+              td   
+                input(type="checkbox" checked=vinyl.available)
+              
 block scripts
   script(src="/js/dashboard.js")
