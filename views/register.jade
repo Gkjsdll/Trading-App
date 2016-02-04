@@ -9,26 +9,26 @@ block content
     .form-group
       span.requiredField * 
       label First Name
-      input#firstName.form-control(type='text', value="John", required)
+      input#firstName.form-control(type='text', placeholder="First Name", required)
     .form-group
       span.requiredField * 
       label Last Name
-      input#lastName.form-control(type='text', value="Doe", required)
+      input#lastName.form-control(type='text', placeholder="Last Name", required)
     .form-group
       label Phone #
-      input#phone.form-control(type='text')
+      input#phone.form-control(type='text', placeholder="Phone #")
     .form-group
       span.requiredField * 
       label Email address
-      input#email.form-control(type='email', value="example@website.co", required)
+      input#email.form-control(type='email', placeholder="E-Mail" required)
     .form-group
       span.requiredField * 
       label Password
-      input#password.form-control(type='password', value="***", required)
+      input#password.form-control(type='password', placeholder="Password", required)
     .form-group
       span.requiredField * 
       label Verify Password
-      input#verifyPassword.form-control(type='password', value="***" required)
+      input#verifyPassword.form-control(type='password', placeholder="Verify Password" required)
     button.btn.btn-default(type='submit') Submit
 
 block scripts
