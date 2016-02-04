@@ -17,8 +17,8 @@ block content
         .row
           .col-xs-4.align-left
             = "Condition: " + vinyl.condition 
-          .col-xs-4.align-left
-            = "Year: " + vinyl.year 
+          div.col-xs-4.align-left
+            = vinyl.year ? "Year: " + vinyl.year : "Year: Unknown"
           .col-xs-4.align-left
             = "Genre: " + vinyl.genre 
 
