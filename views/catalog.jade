@@ -4,22 +4,32 @@ block links
   link(rel="stylesheet", href="/css/catalog.css")
 
 block content
+  //- .loading
+  //-   img(src="http://www.recordsindia.com/images/spinning_record_am.gif")
+  //-   h2 Loading...
+  form#IdFormFilter
+    .form-group
+      label Filter by Artist:
+      input(type="text").form-control#IdFilter
+    button(type='submit').btn.btn-default
+      span.glyphicon.glyphicon-search
+
   ul#IdCatalog
     each vinyl in catalog
       li.vinylListing
         .row
-          .col-xs-6.align-left
+          .col-xs-6.align-left.artist
             = "Artist: " + vinyl.artist
-          .col-xs-4.align-left
+          .col-xs-4.align-left.album
             = "Album: " + vinyl.album 
-          .col-xs-2
-            button.btn.btn-default(data-owner = vinyl.owner) Barter
+          //- .col-xs-2
+          //-   button.btn.btn-default(data-owner = vinyl.owner) Barter
         .row
-          .col-xs-4.align-left
+          .col-xs-4.align-left.condition
             = "Condition: " + vinyl.condition 
-          div.col-xs-4.align-left
+          div.col-xs-4.align-left.year
             = vinyl.year ? "Year: " + vinyl.year : "Year: Unknown"
-          .col-xs-4.align-left
+          .col-xs-4.align-left.genre
             = "Genre: " + vinyl.genre 
 
 block scripts

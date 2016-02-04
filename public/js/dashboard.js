@@ -47,9 +47,6 @@ function doVinylAvail(){
     method: "PUT",
     data: sendData
   })
-  .success(function(data){
-    swal("success!")
-  })
   .fail(function(err){
     return console.error(err);
   })

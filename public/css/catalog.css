@@ -27,3 +27,8 @@ li .row{
 #navLogin, #navRegister {
   display: none;
 }
+
+.loading {
+  width: 100%;
+  text-align: center;
+}
