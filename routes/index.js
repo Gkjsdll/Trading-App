@@ -20,9 +20,7 @@ router.get("/dashboard", User.isLoggedIn, function(req, res, next) {
 })
 
 router.get('/catalog', User.isLoggedIn, function(req, res, next) {
-  console.log(req.user._id);
   Vinyl.find({owner: {$ne: req.user_id} }, function(err, vinyls) {
-    console.log(vinyls);
     if(err) return res.status(400).send(err);
     res.render('catalog', {catalog: vinyls});
   });

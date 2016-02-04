@@ -6,12 +6,14 @@ block links
 block content
   ul#IdCatalog
     each vinyl in catalog
-      li
+      li.vinylListing
         .row
           .col-xs-6.align-left
             = "Artist: " + vinyl.artist
-          .col-xs-6.align-left
+          .col-xs-4.align-left
             = "Album: " + vinyl.album 
+          .col-xs-2
+            button.btn.btn-default(data-owner = vinyl.owner) Barter
         .row
           .col-xs-4.align-left
             = "Condition: " + vinyl.condition 
@@ -19,3 +21,5 @@ block content
             = "Year: " + vinyl.year 
           .col-xs-4.align-left
             = "Genre: " + vinyl.genre 
+
+body.on("click", ".vinylListing button")
