@@ -1,0 +1,9 @@
+#IdWelcome {
+  background-image: url('http://cdn.pastemagazine.com/www/articles/vinyl_main.jpeg');
+  background-repeat: no-repeat;
+  width: 300px;
+  min-height: 300px;
+  text-shadow: 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white;
+  text-align: center;
+  padding-top: 86px;
+}

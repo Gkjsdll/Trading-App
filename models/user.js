@@ -89,7 +89,7 @@ userSchema.statics.isLoggedIn = function(req, res, next) {
   next();
 
   function authFail(err) {
-    res.status(401).send({error: `Authentication failed: ${err}`})
+    res.redirect("/users/login")
   }
 
 };

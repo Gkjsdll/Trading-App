@@ -35,7 +35,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post('/logout', function(req, res, next) {
-  res.cookie('userjwt', null).send();
+  res.clearCookie('userjwt').send();
 });
 
 router.get('/profile', User.isLoggedIn, function(req, res) {
