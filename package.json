@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "setup": "rm -rf node_modules public/lib && npm i && bower i",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "post-start": "bower i"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
