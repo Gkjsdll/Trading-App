@@ -34,7 +34,7 @@ block content
             tr.col-xs-3
               td Available
               td   
-                input(type="checkbox" checked=vinyl.available)
+                input.availableCheck(type="checkbox" checked=vinyl.available data-vinyl-id = vinyl.id)
               
 block scripts
   script(src="/js/dashboard.js")

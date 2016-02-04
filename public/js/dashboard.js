@@ -4,6 +4,7 @@ $(document).ready(init);
 
 function init() {
   $("#ownedVinyls").on("click", ".deleteVinyl", doVinylDelete) //deferred event listener for the buttons in each vinyl listing
+  $("#ownedVinyls").on("change", ".availableCheck", doVinylAvail)
 };
 
 function doVinylDelete(){
@@ -33,4 +34,23 @@ function doVinylDelete(){
       swal.close();
     }
   });
+}
+
+function doVinylAvail(){
+  var $this = $(this);
+  var sendData = {
+    vinyl_id: $this.data('vinyl-id'),
+    available: $this.prop('checked')
+  }
+  $.ajax({
+    url: "/vinyls",
+    method: "PUT",
+    data: sendData
+  })
+  .success(function(data){
+    swal("success!")
+  })
+  .fail(function(err){
+    return console.error(err);
+  })
 }

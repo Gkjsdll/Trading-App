@@ -27,7 +27,3 @@ li .row{
 #navLogin, #navRegister {
   display: none;
 }
-
-.availableCheck {
-  margin-left: 120px;
-}

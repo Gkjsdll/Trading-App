@@ -44,6 +44,14 @@ router.post("/", User.isLoggedIn, function(req, res, next) {
   });
 });
 
+router.put("/", User.isLoggedIn, function(req, res, next) {
+    Vinyl.findById(req.body.vinyl_id, function(err, vinyl) {
+      vinyl.available = req.body.available;
+      vinyl.save();
+      res.send("Put request received!!!");
+    });
+});
+
 router.delete("/", User.isLoggedIn, function(req, res, next) {
   Vinyl.findByIdAndRemove(req.body.vinyl_id, function(err, removedVinyl) { //if callback not specified, a query object is returned and the item is not deleted
     if(err) return res.status(400).send();
