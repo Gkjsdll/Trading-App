@@ -1,0 +1,20 @@
+#ownedVinyls {
+  text-align: center;
+}
+
+#ownedVinyls li {
+  border: 1px solid lightgrey;
+  margin-bottom: 12px;
+}
+
+.align-left {
+  text-align: left
+}
+
+ul {
+  list-style: none;
+}
+
+li .row{
+  margin: 8px 0px 8px 0px;
+}

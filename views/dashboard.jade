@@ -1,27 +1,28 @@
 extends layout
 
+block links
+  link(rel="stylesheet", href="/css/dashboard.css")
+
 block content
   h2
     = "Hello, " + user.first
   a(href="/vinyls/add")
     button.btn.btn-default Add Vinyl
   h3 Offers You've Made
-  ul
-    li 
   h3 Offers from Others
-  ul
-    li 
   h3 Your Collection
   ul#ownedVinyls
     each vinyl in owned
       li
-        p
-          = "Artist: " + vinyl.artist
-        p
-          = "Album: " + vinyl.album 
-        p
-          = "Condition: " + vinyl.condition 
-        p
-          = "Year: " + vinyl.year 
-        p
-          = "Genre: " + vinyl.genre 
+        .row
+          .col-xs-6.align-left
+            = "Artist: " + vinyl.artist
+          .col-xs-6.align-left
+            = "Album: " + vinyl.album 
+        .row
+          .col-xs-4.align-left
+            = "Condition: " + vinyl.condition 
+          .col-xs-4.align-left
+            = "Year: " + vinyl.year 
+          .col-xs-4.align-left
+            = "Genre: " + vinyl.genre 
