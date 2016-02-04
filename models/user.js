@@ -59,6 +59,27 @@ userSchema.statics.login = function(userObj, cb) {
   });
 };
 
+userSchema.statics.forgot = function(input, cb) {
+  if(!input){
+    return cb("Missing email");
+  }
+  ref.resetPassword({
+    email: input.email
+  }, function(error) {
+    if (error) {
+      switch (error.code) {
+        case "INVALID_USER":
+          return cb("The specified user account does not exist.");
+          break;
+        default:
+          return cb("Error resetting password:", error);
+      }
+    } else {
+      return cb();
+    }
+  });
+}
+
 
 userSchema.statics.isLoggedIn = function(req, res, next) {
 /*

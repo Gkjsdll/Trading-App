@@ -1,0 +1,12 @@
+extends layout
+  
+block content  
+  h3.col-xs-8.col-xs-offset-2 Reset Password
+  form.col-xs-8.col-xs-offset-2#formPassReset
+    .form-group
+      label Email address
+      input#email.form-control(type='email', placeholder='E-Mail', required)
+    button.btn.btn-default(type='submit') Submit
+
+block scripts
+  script(src="/js/forgotlogin.js")

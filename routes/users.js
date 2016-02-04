@@ -24,6 +24,17 @@ router.post('/register', function(req, res, next) {
   });
 });
 
+router.get("/forgot", function(req, res, next) {
+  res.render("forgotLogin");
+})
+
+router.post("/forgot", function(req, res, next) {
+  User.forgot(req.body, function(err){
+    if(err) return res.status(400).send(err.code);
+    res.send("Password reset e-mail sent.");
+  });
+})
+
 router.post('/login', function(req, res, next) {
 
   // req.body --> {email:  , password:  }
